@@ -8,11 +8,11 @@ import { ExampleComponent } from './example/example.component';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  constructor(public dialog: DialogService) {
-    const ref = this.dialog.open(ExampleComponent, { data: { message: 'I am a dynamic component inside of a dialog!' } });
+  title = 'demo3';
 
-    ref.afterClosed.subscribe(result => {
-      console.log('Dialog closed', result);
-    });
+  constructor(
+    public dialog: DialogService
+  ) {
+    this.dialog.open(ExampleComponent)
   }
 }
